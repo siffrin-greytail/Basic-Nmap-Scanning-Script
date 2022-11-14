@@ -1,0 +1,18 @@
+#!/bin/bash
+echo 'Basic Nmap Scanning Script'
+echo '--------------------------'
+echo ''
+echo 'Target IP Address: '
+echo ''
+read ipaddr
+echo ''
+echo 'Please enter any flags along with their arguments that you would like to use: '
+echo ''
+read nflags
+echo ''
+mkdir nmap
+echo '' > ./nmap/out.txt
+nmap $nflags $ipaddr | tee ./nmap/out.txt
+echo ''
+echo 'Nmap scan has been saved to ./nmap/out.txt'
+echo ''
